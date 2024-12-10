@@ -1,0 +1,9 @@
+pydantic==2.5.2
+loguru==0.7.2
+fastapi==0.115.5
+uvicorn==0.32.1
+exifread==3.0.0
+python-multipart==0.0.18
+insightface
+onnxruntime
+redis
