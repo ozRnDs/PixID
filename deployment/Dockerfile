@@ -8,16 +8,16 @@ ENV PYTHONUNBUFFERED=1 \
     POETRY_NO_INTERACTION=1 \
     VENV_PATH="/app/.venv"
 
-RUN apt update && apt install git-all -y
-RUN pip install poetry
+RUN apt update && apt install build-essential git-all python3-opencv -y
+# RUN pip install poetry
 
 # Copy necessary files
-COPY pyproject.toml poetry.lock README.md /app/
+COPY pyproject.toml poetry.lock README.md requirements.txt /app/
 # Install dependencies and set up pre-commit
-RUN poetry install
+RUN pip install -r requirements.txt
 
 COPY src /app/src
 
 EXPOSE 8000
 
-ENTRYPOINT ["poetry", "run", "uvicorn", "src.fastapi_server:app", "--reload", "--host", "0.0.0.0"]
+ENTRYPOINT ["python", "-m", "src.main"]

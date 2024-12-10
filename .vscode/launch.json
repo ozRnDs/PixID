@@ -6,22 +6,15 @@
     "configurations": [
         {
             "name": "Python: FastAPI (Uvicorn)",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "uvicorn",
-            "args": [
-                "src.fastapi_server:app",          // Replace 'backend' with the filename of your FastAPI script (without the .py extension)
-                "--reload"
-            ],
-            "jinja": true
-        },
-        {
-            "name": "Explore Pickle",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/dev/explore_pickle_file.py",
-            "console": "integratedTerminal",
+            "module": "src.main",
+            // "args": [
+            //     "src.main:app",  // Replace 'src.main' with the correct path to your FastAPI script's app instance
+            //     "--reload"
+            // ],
+            "jinja": true,
             "justMyCode": true
-          }
+        },
     ]
 }
