@@ -82,7 +82,7 @@ async def insightface_recognize(file: UploadFile = File(...)):
         start_time = time.perf_counter()
         
         # Initialize InsightFace model
-        app_insight = FaceAnalysis(name='buffalo_l', allowed_modules=['detection', 'recognition'])
+        app_insight = FaceAnalysis(name='buffalo_l', allowed_modules=['detection', 'recognition'], root="/models")
         app_insight.prepare(ctx_id=0, det_size=(640, 640))
         img = cv2.imread(temp_file_path)
         # Analyze the image
