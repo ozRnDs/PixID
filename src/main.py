@@ -194,7 +194,7 @@ async def start_uvicorn():
     Run Uvicorn in an asyncio-compatible way.
     """
     import uvicorn
-    config = uvicorn.Config(app, host="0.0.0.0", port=8001, loop="asyncio")
+    config = uvicorn.Config(app, host="0.0.0.0", port=8000, loop="asyncio")
     server = uvicorn.Server(config)
     await server.serve()
 

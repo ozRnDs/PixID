@@ -7,6 +7,6 @@ docker build -f deployment/Dockerfile -t ozrnds/PixID:$(cz version -p) .
 ```
 
 # Run container
-```
-docker run -v ./data:/models -p 8010:8000 my-fastapi-app
+```bash
+docker run --rm --name face-detection -d -v ./data:/models -p 8010:8000 ozrnds/pixid:0.1.0
 ```
